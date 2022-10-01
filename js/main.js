@@ -17,7 +17,7 @@ function getRandomNumber(min, max) {
 }
 
 function checkLengthString (checkString, maxLength) {
-  if (checkString.length > maxLength) {
+  if (checkString.length < maxLength) {
     return true;
   }
   return false;
