@@ -24,5 +24,5 @@ function checkLengthString (checkString, maxLength) {
 }
 
 getRandomNumber(1, 10);
-checkLengthString ('какой то текст', 50);
+checkLengthString ('какой то текст для проверки длины', 50);
 
