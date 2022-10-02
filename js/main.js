@@ -8,9 +8,7 @@ const getRandomNumber = (min, max) => {
   // использован материал https://habr.com/ru/post/312880/
 };
 
-function checkLengthString (checkString, maxLength) {
-  return checkString.length < maxLength;
-}
+const checkLengthString = (checkString, maxLength) => checkString.length < maxLength;
 
 getRandomNumber(1, 10);
 checkLengthString ('какой то текст ', 50);
