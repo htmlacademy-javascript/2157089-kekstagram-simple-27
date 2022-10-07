@@ -10,6 +10,23 @@ const getRandomNumber = (min, max) => {
 
 const checkLengthString = (checkString, maxLength) => checkString.length < maxLength;
 
-getRandomNumber(1, 10);
+
 checkLengthString ('какой то текст ', 50);
 
+const testSizeArray = 25;
+const likeGenMin = 15;
+const likeGenMax = 200;
+const commentsGenMax = 200;
+const testObjects = [];
+
+for (let i = 0; i < testSizeArray;) {
+  i += 1;
+  testObjects.push({
+    id: i,
+    url: `photos/${i}.jpg`,
+    description: 'Описание фото номер',
+    likes: getRandomNumber(likeGenMin, likeGenMax),
+    comments: getRandomNumber(0, commentsGenMax),
+  }
+  );
+}
