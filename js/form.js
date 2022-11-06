@@ -37,7 +37,7 @@ function pushEscapeKey(evt) {
     evt.preventDefault();
     hideUploadForm();
   }
-};
+}
 
 uploadFile.addEventListener('change', (showUploadForm));
 
