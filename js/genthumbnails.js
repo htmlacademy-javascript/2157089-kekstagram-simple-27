@@ -17,4 +17,3 @@ testObjects.forEach(({url, likes, comments}) => {
 });
 
 picturesBlock.appendChild(pictureFragment);
-
