@@ -1,4 +1,6 @@
 import {isEscapeKey} from './util.js';
+import {setDefaultSize} from './resizeimg.js';
+import {setDefaulttEffect} from './filters.js';
 
 const uploadForm = document.querySelector('.img-upload__form');
 const imgUploadOverlay = document.querySelector('.img-upload__overlay');
@@ -8,14 +10,16 @@ const closeButton = document.querySelector('#upload-cancel');
 const showUploadForm = () => {
   imgUploadOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
-  document.addEventListener('keydown', pushEscapeKey);
+  document.addEventListener('keydown', onEscapeKey);
+  setDefaultSize();
+  setDefaulttEffect();
 };
 
 const hideUploadForm = () => {
   uploadForm.reset();
   imgUploadOverlay.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  document.removeEventListener('keydown', pushEscapeKey);
+  document.removeEventListener('keydown', onEscapeKey);
 };
 
 const pristine = new Pristine(uploadForm,
@@ -32,13 +36,13 @@ uploadForm.addEventListener('submit', (evt) => {
   }
 });
 
-function pushEscapeKey(evt) {
+function onEscapeKey(evt) {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     hideUploadForm();
   }
 }
 
-uploadFile.addEventListener('change', (showUploadForm));
+uploadFile.addEventListener('change', showUploadForm);
 
-closeButton.addEventListener('click', (hideUploadForm));
+closeButton.addEventListener('click', hideUploadForm);
