@@ -1,3 +1,4 @@
+/* тестовые данные
 import {getRandomNumber} from './util.js';
 
 const TEST_SIZE_ARRAY = 25;
@@ -19,3 +20,4 @@ for (let i = 0; i < TEST_SIZE_ARRAY;) {
 }
 
 export {testObjects};
+*/
