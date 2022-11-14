@@ -1,4 +1,3 @@
-//import { showAlert } from './alerts.js';
 import { getData } from './api.js';
 
 const picturesUsersBlock = document.querySelector('.pictures__title');
@@ -17,9 +16,8 @@ const renderSimilarPictures = (userPictures) => {
     element.querySelector('.picture__comments').textContent = comments;
     pictureFragment.appendChild(element);
 });
-
   picturesBlock.appendChild(pictureFragment);
 };
 
 getData(renderSimilarPictures);
-//getData(renderSimilarPictures, showAlert);
+
