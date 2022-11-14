@@ -15,7 +15,8 @@ const renderSimilarPictures = (userPictures) => {
     element.querySelector('.picture__likes').textContent = likes;
     element.querySelector('.picture__comments').textContent = comments;
     pictureFragment.appendChild(element);
-});
+  });
+
   picturesBlock.appendChild(pictureFragment);
 };
 
