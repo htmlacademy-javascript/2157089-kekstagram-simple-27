@@ -124,4 +124,4 @@ updateSlider();
 uploadForm.addEventListener('change', onFormChange);
 sliderElement.noUiSlider.on('update', onSliderUpdate);
 
-export {setDefaulttEffect};
+export { setDefaulttEffect };

@@ -1,8 +1,8 @@
-import {isEscapeKey} from './util.js';
-import {setDefaultSize} from './resizeimg.js';
-import {setDefaulttEffect} from './filters.js';
-import {sendData} from './api.js';
-import {showErrorMessage, showSuccessMessage} from './alert.js';
+import { isEscapeKey } from './util.js';
+import { setDefaultSize } from './resizeimg.js';
+import { setDefaulttEffect } from './filters.js';
+import { sendData} from './api.js';
+import { showErrorMessage, showSuccessMessage } from './alert.js';
 
 const uploadForm = document.querySelector('.img-upload__form');
 const imgUploadOverlay = document.querySelector('.img-upload__overlay');

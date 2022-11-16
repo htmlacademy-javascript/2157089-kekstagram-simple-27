@@ -39,4 +39,4 @@ const setDefaultSize = () => {
 upScaleButton.addEventListener('click', onUpScaleButtonClick);
 downScaleButton.addEventListener('click', onDownScaleButtonClick);
 
-export {setDefaultSize};
+export { setDefaultSize };
