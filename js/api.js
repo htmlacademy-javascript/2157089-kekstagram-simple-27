@@ -1,7 +1,7 @@
-import { showErrorMessage } from './alert.js';
+import {showErrorMessage} from './alert.js';
 
 const REMOTE_SERVER = 'https://27.javascript.pages.academy/kekstagram-simple';
-const serverErrorMessage = 'Ошибка загрузки';
+const SERVER_ERROR_MESSAGE = 'Ошибка загрузки';
 
 const getData = (onSuccess) =>
   fetch(`${REMOTE_SERVER}/data`)
@@ -22,12 +22,12 @@ const sendData = (onSuccess, onError, body) => {
       if (response.ok) {
         onSuccess();
       } else {
-        onError(serverErrorMessage);
+        onError(SERVER_ERROR_MESSAGE);
       }
     })
     .catch(() => {
-      onError(serverErrorMessage);
+      onError(SERVER_ERROR_MESSAGE);
     });
 };
 
-export { sendData, getData };
+export {sendData, getData};

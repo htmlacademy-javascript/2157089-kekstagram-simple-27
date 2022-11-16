@@ -1,4 +1,4 @@
-import { isEscapeKey } from './util.js';
+import {isEscapeKey} from './util.js';
 
 const successMessage = document.querySelector('#success').content.querySelector('.success').cloneNode(true);
 const errorMessage = document.querySelector('#error').content.querySelector('.error').cloneNode(true);
@@ -41,4 +41,4 @@ const showErrorMessage = () => {
   document.addEventListener('click', onMessageClose);
 };
 
-export { showSuccessMessage, showErrorMessage };
+export {showSuccessMessage, showErrorMessage};
