@@ -1,4 +1,4 @@
-import { getData } from './api.js';
+import {getData} from './api.js';
 
 const picturesUsersBlock = document.querySelector('.pictures__title');
 picturesUsersBlock.classList.remove('visually-hidden');
