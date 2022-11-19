@@ -31,13 +31,13 @@ const addEvent = () => {
 };
 
 const showSuccessMessage = () => {
-  typeMessage = successMessage;
+  successButton = successMessage;
   document.body.append(successMessage);
   addEvent();
 };
 
 const showErrorMessage = () => {
-  typeMessage = errorMessage;
+  errorButton = errorMessage;
   document.body.append(errorMessage);
   addEvent();
 };
