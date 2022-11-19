@@ -1,9 +1,6 @@
 import {getData} from './api.js';
 
-const picturesUsersBlock = document.querySelector('.pictures__title');
-picturesUsersBlock.classList.remove('visually-hidden');
-
-const picturesBlock = document.querySelector('.pictures__title');
+const picturesUsersBlock = document.querySelector('.pictures');
 const picturesUsersTemplate = document.querySelector('#picture').content;
 const template = picturesUsersTemplate.querySelector('.picture');
 
@@ -17,8 +14,8 @@ const renderSimilarPictures = (userPictures) => {
     pictureFragment.appendChild(element);
   });
 
-  picturesBlock.appendChild(pictureFragment);
+  picturesUsersBlock.appendChild(pictureFragment);
 };
 
+picturesUsersBlock.classList.remove('visually-hidden');
 getData(renderSimilarPictures);
-

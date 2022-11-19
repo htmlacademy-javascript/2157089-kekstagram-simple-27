@@ -10,7 +10,7 @@ const uploadFile = document.querySelector('#upload-file');
 const closeButton = document.querySelector('#upload-cancel');
 const submitButton = document.querySelector('.img-upload__submit');
 
-const showUploadForm = () => {
+const onShowUploadForm = () => {
   imgUploadOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
   document.addEventListener('keydown', onEscapeKey);
@@ -18,7 +18,7 @@ const showUploadForm = () => {
   setDefaulttEffect();
 };
 
-const hideUploadForm = () => {
+const onHideUploadForm = () => {
   uploadForm.reset();
   imgUploadOverlay.classList.add('hidden');
   document.body.classList.remove('modal-open');
@@ -40,16 +40,16 @@ uploadForm.addEventListener('submit', (evt) => {
 function onEscapeKey(evt) {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
-    hideUploadForm();
+    onHideUploadForm();
   }
 }
 
-const blockSubmitButton = () => {
+const onBlockSubmitButton = () => {
   submitButton.disabled = true;
   submitButton.textContent = 'Отправляю..';
 };
 
-const unblockSubmitButton = () => {
+const onUnblockSubmitButton = () => {
   submitButton.disabled = false;
   submitButton.textContent = 'Опубликовать';
 };
@@ -61,15 +61,15 @@ const setUploadFormSubmit = (onSuccess) => {
     const isValid = pristine.validate();
 
     if (isValid) {
-      blockSubmitButton();
+      onBlockSubmitButton ();
       sendData(
         () => {
           onSuccess();
-          unblockSubmitButton();
+          onUnblockSubmitButton();
           showSuccessMessage();
         },
         () => {
-          unblockSubmitButton();
+          onUnblockSubmitButton();
           showErrorMessage();
         },
         new FormData(evt.target),
@@ -78,8 +78,8 @@ const setUploadFormSubmit = (onSuccess) => {
   });
 };
 
-uploadFile.addEventListener('change', showUploadForm);
+uploadFile.addEventListener('change', onShowUploadForm);
 
-closeButton.addEventListener('click', hideUploadForm);
+closeButton.addEventListener('click', onHideUploadForm);
 
-setUploadFormSubmit(hideUploadForm);
+setUploadFormSubmit(onHideUploadForm);
