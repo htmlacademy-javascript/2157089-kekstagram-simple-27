@@ -21,24 +21,27 @@ const onMessageClose = (evt) => {
 
 function closeMessage() {
   typeMessage.remove();
-  document.removeEventListener('keydown', onEscapeKey, true);
+  document.removeEventListener('keydown', onEscapeKey);
   document.removeEventListener('click',onMessageClose);
 }
+
+const addEvent = () => {
+  document.addEventListener('keydown', onEscapeKey);
+  document.addEventListener('click', onMessageClose);
+};
 
 const showSuccessMessage = () => {
   typeMessage = successMessage;
   document.body.append(successMessage);
   successButton.addEventListener('click', closeMessage);
-  document.addEventListener('keydown', onEscapeKey, true);
-  document.addEventListener('click', onMessageClose);
+  addEvent();
 };
 
 const showErrorMessage = () => {
   typeMessage = errorMessage;
   document.body.append(errorMessage);
   errorButton.addEventListener('click', closeMessage);
-  document.addEventListener('keydown', onEscapeKey, true);
-  document.addEventListener('click', onMessageClose);
+  addEvent();
 };
 
 export {showSuccessMessage, showErrorMessage};

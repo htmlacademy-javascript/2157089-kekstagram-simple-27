@@ -1,3 +1,3 @@
 import './util.js';
-import './genthumbnails.js';
+import './thumbnails.js';
 import './form.js';
