@@ -7,40 +7,40 @@ const errorButton = errorMessage.querySelector('.error__button');
 
 let typeMessage;
 
-const onEscapeKey = (evt) => {
+const onEscapeKeyPress = (evt) => {
   if(isEscapeKey(evt)) {
-    closeMessage();
+    onCloseButtonClick();
   }
 };
 
 const onMessageClose = (evt) => {
   if (evt.target === typeMessage) {
-    closeMessage();
+    onCloseButtonClick();
   }
 };
 
-function closeMessage() {
+function onCloseButtonClick() {
   typeMessage.remove();
-  document.removeEventListener('keydown', onEscapeKey);
+  document.removeEventListener('keydown', onEscapeKeyPress);
   document.removeEventListener('click',onMessageClose);
 }
 
 const addEvent = () => {
-  document.addEventListener('keydown', onEscapeKey);
+  document.addEventListener('keydown', onEscapeKeyPress);
   document.addEventListener('click', onMessageClose);
 };
 
 const showSuccessMessage = () => {
   typeMessage = successMessage;
   document.body.append(successMessage);
-  successButton.addEventListener('click', closeMessage);
+  successButton.addEventListener('click', onCloseButtonClick);
   addEvent();
 };
 
 const showErrorMessage = () => {
   typeMessage = errorMessage;
   document.body.append(errorMessage);
-  errorButton.addEventListener('click', closeMessage);
+  errorButton.addEventListener('click', onCloseButtonClick);
   addEvent();
 };
 

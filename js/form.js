@@ -13,7 +13,7 @@ const submitButton = document.querySelector('.img-upload__submit');
 const onShowUploadForm = () => {
   imgUploadOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
-  document.addEventListener('keydown', onEscapeKey);
+  document.addEventListener('keydown', onEscapeKeyPress);
   setDefaultSize();
   setDefaulttEffect();
 };
@@ -22,7 +22,7 @@ const onHideUploadForm = () => {
   uploadForm.reset();
   imgUploadOverlay.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  document.removeEventListener('keydown', onEscapeKey);
+  document.removeEventListener('keydown', onEscapeKeyPress);
 };
 
 const pristine = new Pristine(uploadForm, {
@@ -37,7 +37,7 @@ uploadForm.addEventListener('submit', (evt) => {
   }
 });
 
-function onEscapeKey(evt) {
+function onEscapeKeyPress(evt) {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     onHideUploadForm();
