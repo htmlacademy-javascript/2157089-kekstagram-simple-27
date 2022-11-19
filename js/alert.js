@@ -31,14 +31,16 @@ const addEvent = () => {
 };
 
 const showSuccessMessage = () => {
-  successButton = successMessage;
+  typeMessage = successMessage;
   document.body.append(successMessage);
+  successButton.addEventListener('click', closeMessage);
   addEvent();
 };
 
 const showErrorMessage = () => {
-  errorButton = errorMessage;
+  typeMessage = errorMessage;
   document.body.append(errorMessage);
+  errorButton.addEventListener('click', closeMessage);
   addEvent();
 };
 
