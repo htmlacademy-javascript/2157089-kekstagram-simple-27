@@ -27,8 +27,7 @@ const onHideUploadForm = () => {
 
 const pristine = new Pristine(uploadForm, {
   classTo: 'img-upload__text',
-  errorTextParent: 'img-upload__text',
-  errorTextClass: 'img-upload__message--loading'
+  errorTextParent: 'img-upload__text'
 });
 
 uploadForm.addEventListener('submit', (evt) => {

@@ -1,14 +1,1 @@
-const getRandomNumber = (min, max) => {
-
-  if (min < 0 || min > max) {
-    return NaN;
-  }
-
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  // использован материал https://habr.com/ru/post/312880/
-};
-
-const isEscapeKey = (evt) => evt.key === 'Escape';
-
-
-export {getRandomNumber, isEscapeKey};
+export const isEscapeKey = (evt) => evt.key === 'Escape';
